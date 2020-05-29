@@ -1,5 +1,10 @@
+import 'package:animationexample/constants.dart';
+import 'containeranime/animatedcontainer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'fadeanime/animatedopacity.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -12,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Animation Demo Page'),
@@ -30,43 +35,53 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var _color = Colors.blue;
-  var _height = 100.0;
-  var _width = 100.0;
-
-  animateContainer() {
-    setState(() {
-      _color = _color == Colors.blue ? Colors.orange : Colors.red;
-      _height = _height == 100.0 ? 200.0 : 100.0;
-      _width = _width == 100.0 ? 200.0 : 100.0;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: GoogleFonts.getFont('Lato'),
+          style: GoogleFonts.getFont('Pacifico'),
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            AnimatedContainer(
-              duration: Duration(seconds: 1),
-              color: _color,
-              height: _height,
-              width: _width,
-              curve: Curves.easeInBack,
-            ),
-            OutlineButton(
-              onPressed: () => animateContainer(),
-              child: Text('Animate Container'),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              RaisedButton(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  'Animated Container',
+                  style: GoogleFonts.lato(textStyle: kmainButtonTextStyle),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ContainerDemo()),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              RaisedButton(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  'Animated Opacity',
+                  style: GoogleFonts.lato(textStyle: kmainButtonTextStyle),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FadeAnime()),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
