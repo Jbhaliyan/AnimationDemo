@@ -1,10 +1,10 @@
+import 'package:animationexample/animationtext/animationtext.dart';
 import 'package:animationexample/constants.dart';
 import 'containeranime/animatedcontainer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'fadeanime/animatedopacity.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -14,14 +14,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Animation Demo Page'),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blueGrey,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        routes: {
+          '/': (context) => MyHomePage(),
+          '/animatedcontainer': (context) => ContainerDemo(),
+          '/animatedopacity': (context) => FadeAnime(),
+          '/animatedtext': (context) => AnimatedText(),
+        });
   }
 }
 
@@ -40,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.title,
+          "Animation Example",
           style: GoogleFonts.getFont('Pacifico'),
         ),
       ),
@@ -58,14 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: GoogleFonts.lato(textStyle: kmainButtonTextStyle),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ContainerDemo()),
-                  );
+                  Navigator.pushNamed(context, '/animatedcontainer');
                 },
               ),
               SizedBox(
-                height: 20.0,
+                width: double.infinity,
+                height: 10.0,
               ),
               RaisedButton(
                 padding: EdgeInsets.all(10.0),
@@ -74,10 +76,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: GoogleFonts.lato(textStyle: kmainButtonTextStyle),
                 ),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FadeAnime()),
-                  );
+                  Navigator.pushNamed(context, '/animatedopacity');
+                },
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 10.0,
+              ),
+              RaisedButton(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  'Animated Text',
+                  style: GoogleFonts.lato(textStyle: kmainButtonTextStyle),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/animatedtext');
                 },
               ),
             ],
