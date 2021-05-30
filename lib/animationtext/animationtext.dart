@@ -1,4 +1,5 @@
-import 'package:animationexample/utilities/listwidget.dart';
+import 'package:animationexample/animationtext/listwidget.dart';
+import 'package:animationexample/utilities/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,7 +17,7 @@ class _AnimatedTextState extends State<AnimatedText> {
     "Typer",
     "Typewriter",
   ];
-  List<Color> _colors = [
+  List<Color?> _colors = [
     Colors.orange[800],
     Colors.brown[600],
     Colors.lightGreen[800],
@@ -49,28 +50,22 @@ class _AnimatedTextState extends State<AnimatedText> {
             child: Container(),
           ),
           Container(
-            decoration: BoxDecoration(color: _colors[_index]),
+            decoration: BoxDecoration(color: _colors[_index]!),
             child: Center(child: _listWidget.textAnimationKit[_index]),
             height: 300.0,
             width: 300.0,
           ),
-          Expanded(child: Container()),
-          RaisedButton(
-            child: Text("Animate Text",
-            style:GoogleFonts.paprika(textStyle:TextStyle(fontSize: 20.0))),
-            onPressed: () {
-            setState(
-              () {
-                _index = (_index + 1) % _listWidget.textAnimationKit.length;
-              },
-            );
-          }),
-          RaisedButton(
-            child: Text("Go Back To MainMenu",
-            style:GoogleFonts.paprika(textStyle:TextStyle(fontSize: 20.0))),
-            onPressed: (){
-            Navigator.pop(context);
-          }),
+          // Expanded(child: Container()),
+          GestureDetector(
+              child: textButton("Animate Text"),
+              onTap: () {
+                setState(
+                  () {
+                    _index = (_index + 1) % _listWidget.textAnimationKit.length;
+                  },
+                );
+              }),
+          goBackButton(context),
           SizedBox(
             height: 20.0,
             width: double.maxFinite,

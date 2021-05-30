@@ -1,4 +1,5 @@
 import 'package:animationexample/constants.dart';
+import 'package:animationexample/utilities/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -57,18 +58,7 @@ class _FadeAnimeState extends State<FadeAnime> {
                 });
               },
             ),
-            SizedBox(
-              height: 20.0,
-            ),
-            RaisedButton(
-              child: Text(
-                'Go back to Main Menu !!',
-                style: GoogleFonts.lato(textStyle: kOpacityButtonTextStyle),
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+            goBackButton(context),
           ],
         ),
       ),

@@ -41,15 +41,14 @@ class ListWidget {
       ],
     ),
     FadeAnimatedTextKit(
-      duration: Duration(milliseconds:4000),
+      duration: Duration(milliseconds: 4000),
       text: ["do IT!", "do it RIGHT!!", "do it RIGHT NOW!!!"],
       textStyle: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
-      
     ),
     SizedBox(
       width: 250.0,
       child: TyperAnimatedTextKit(
-         speed:Duration(milliseconds: 500),
+        speed: Duration(milliseconds: 500),
         text: [
           "Never backoff with the learning part",
           "you must do it",
@@ -66,7 +65,7 @@ class ListWidget {
     SizedBox(
       width: 250.0,
       child: TypewriterAnimatedTextKit(
-  speed:Duration(milliseconds: 500),
+        speed: Duration(milliseconds: 500),
         text: [
           "Discipline is the best tool",
           "Design first, then code",
