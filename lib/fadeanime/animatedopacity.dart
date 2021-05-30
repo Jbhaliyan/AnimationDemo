@@ -47,17 +47,15 @@ class _FadeAnimeState extends State<FadeAnime> {
                 ),
               ),
             ),
-            RaisedButton(
-              child: Text(
-                'Opacity',
-                style: GoogleFonts.lato(textStyle: kOpacityButtonTextStyle),
-              ),
-              onPressed: () {
+            GestureDetector(
+              onTap: () {
                 setState(() {
                   opacity = opacity == 0.0 ? 1.0 : 0.0;
                 });
               },
+              child: textButton('Opacity'),
             ),
+            box(20),
             goBackButton(context),
           ],
         ),

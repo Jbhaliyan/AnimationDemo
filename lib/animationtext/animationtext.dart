@@ -34,10 +34,7 @@ class _AnimatedTextState extends State<AnimatedText> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
-            height: 60.0,
-            width: double.maxFinite,
-          ),
+          box(40),
           Text(
             labels[_index],
             style: GoogleFonts.pacifico(
@@ -46,15 +43,14 @@ class _AnimatedTextState extends State<AnimatedText> {
               ),
             ),
           ),
-          Expanded(
-            child: Container(),
-          ),
+          box(40),
           Container(
-            decoration: BoxDecoration(color: _colors[_index]!),
+            decoration: BoxDecoration(color: _colors[_index]),
             child: Center(child: _listWidget.textAnimationKit[_index]),
             height: 300.0,
             width: 300.0,
           ),
+          box(20),
           // Expanded(child: Container()),
           GestureDetector(
               child: textButton("Animate Text"),
@@ -65,6 +61,7 @@ class _AnimatedTextState extends State<AnimatedText> {
                   },
                 );
               }),
+          box(20),
           goBackButton(context),
           SizedBox(
             height: 20.0,

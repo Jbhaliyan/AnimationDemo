@@ -48,7 +48,7 @@ class _ContainerDemoState extends State<ContainerDemo> {
               duration: _duration,
               decoration: BoxDecoration(
                 color: color,
-                borderRadius: BorderRadius.circular(border!),
+                borderRadius: BorderRadius.circular(20),
               ),
               height: _height,
               width: _width,
@@ -57,15 +57,10 @@ class _ContainerDemoState extends State<ContainerDemo> {
             // SizedBox(
             //   height: 40.0,
             // ),
-            RaisedButton(
-              onPressed: () => animateContainer(),
-              child: Text(
-                'Animate Container',
-                style: GoogleFonts.lato(
-                  textStyle: kContainerButtonTextStyle,
-                ),
-              ),
-            ),
+            box(20),
+            GestureDetector(
+                onTap: () => animateContainer(),
+                child: textButton('Animate Container')),
             box(40.0),
             goBackButton(context),
           ],

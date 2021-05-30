@@ -28,8 +28,8 @@ Widget textButton(@required String text) {
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(22),
-      color: Colors.white30,
+      borderRadius: BorderRadius.circular(20),
+      color: Colors.black12,
     ),
     child: Text(
       text,
@@ -45,10 +45,18 @@ Widget goBackButton(BuildContext context) {
     onTap: () {
       Navigator.pop(context);
     },
-    child: Text(
-      'Go back to Main menu!!',
-      style: GoogleFonts.lato(
-        textStyle: kContainerButtonTextStyle,
+    child: Container(
+      height: 60,
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.black12,
+      ),
+      child: Text(
+        'Go back to Main menu!!',
+        style: GoogleFonts.lato(
+          textStyle: kContainerButtonTextStyle,
+        ),
       ),
     ),
   );

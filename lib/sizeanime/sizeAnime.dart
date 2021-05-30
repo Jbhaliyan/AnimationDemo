@@ -35,7 +35,6 @@ class _SizeAnimationState extends State<SizeAnimation>
             child: FlutterLogo(size: 200),
           ),
         ),
-        // textButton("Animate Size"),
         box(20),
         goBackButton(context)
       ]),
