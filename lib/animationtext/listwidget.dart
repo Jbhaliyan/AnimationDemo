@@ -26,53 +26,113 @@ class ListWidget {
               width: 20.0,
               height: 100.0,
             ),
-            RotateAnimatedTextKit(
-              duration: Duration(milliseconds: 1000),
-              isRepeatingAnimation: true,
-              totalRepeatCount: 10,
-              text: ["CREATIVE", "OPTIMISTIC", "REAL"],
-              textAlign: TextAlign.start,
-              textStyle: GoogleFonts.lobster(
+            // ignore: deprecated_member_use
+            DefaultTextStyle(
+              style: GoogleFonts.lobster(
                 textStyle: TextStyle(fontSize: 40.0),
+              ),
+              textAlign: TextAlign.start,
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  RotateAnimatedText(
+                    "CREATIVE",
+                    duration: Duration(milliseconds: 1000),
+                  ),
+                  RotateAnimatedText(
+                    "OPTIMISTIC",
+                    duration: Duration(milliseconds: 1000),
+                  ),
+                  RotateAnimatedText(
+                    "REAL",
+                    duration: Duration(milliseconds: 1000),
+                  ),
+                ],
+
+                // isRepeatingAnimation: true,
+                // totalRepeatCount: 10,
               ),
             ),
           ],
         ),
       ],
     ),
-    FadeAnimatedTextKit(
-      duration: Duration(milliseconds: 4000),
-      text: ["do IT!", "do it RIGHT!!", "do it RIGHT NOW!!!"],
-      textStyle: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
-    ),
     SizedBox(
       width: 250.0,
-      child: TyperAnimatedTextKit(
-        speed: Duration(milliseconds: 500),
-        text: [
-          "Never backoff with the learning part",
-          "you must do it",
-          "better implementation",
-          "- jyoti bhaliyan"
-        ],
-        textStyle: GoogleFonts.oswald(
-          textStyle: TextStyle(
-            fontSize: 30.0,
-          ),
+      child: DefaultTextStyle(
+        style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+        child: AnimatedTextKit(
+          //
+          animatedTexts: [
+            FadeAnimatedText(
+              'do IT!',
+              duration: Duration(milliseconds: 4000),
+            ),
+            FadeAnimatedText(
+              'do it RIGHT!!',
+              duration: Duration(milliseconds: 4000),
+            ),
+            FadeAnimatedText(
+              'do it RIGHT NOW!!!',
+              duration: Duration(milliseconds: 4000),
+            ),
+          ],
         ),
       ),
     ),
     SizedBox(
       width: 250.0,
-      child: TypewriterAnimatedTextKit(
-        speed: Duration(milliseconds: 500),
-        text: [
-          "Discipline is the best tool",
-          "Design first, then code",
-          "Do not patch bugs out, rewrite them",
-          "Do not test bugs out, design them out",
-        ],
-        textStyle: TextStyle(fontSize: 30.0, fontFamily: "Agne"),
+      child: DefaultTextStyle(
+        style: GoogleFonts.oswald(
+          textStyle: TextStyle(
+            fontSize: 30.0,
+          ),
+        ),
+        child: AnimatedTextKit(animatedTexts: [
+          TyperAnimatedText(
+            "Never backoff with the learning part",
+            speed: Duration(milliseconds: 500),
+          ),
+          TyperAnimatedText(
+            "you must do it",
+            speed: Duration(milliseconds: 500),
+          ),
+          TyperAnimatedText(
+            'better implementation',
+            speed: Duration(milliseconds: 500),
+          ),
+          TyperAnimatedText(
+            '- jyoti bhaliyan',
+            speed: Duration(milliseconds: 500),
+          ),
+        ]),
+      ),
+    ),
+    SizedBox(
+      width: 250.0,
+      child: DefaultTextStyle(
+        style: TextStyle(fontSize: 30.0, fontFamily: "Agne"),
+        child: AnimatedTextKit(
+          animatedTexts: [
+            TypewriterAnimatedText(
+              'Discipline is the best tool',
+              speed: Duration(milliseconds: 500),
+            ),
+            TypewriterAnimatedText(
+              'Design first, then code',
+              speed: Duration(milliseconds: 500),
+            ),
+            TypewriterAnimatedText(
+              'Do not patch bugs out, rewrite them',
+              speed: Duration(milliseconds: 500),
+            ),
+            TypewriterAnimatedText(
+              'Do not test bugs out, design them out',
+              speed: Duration(milliseconds: 500),
+            )
+          ],
+          displayFullTextOnTap: true,
+          stopPauseOnTap: true,
+        ),
       ),
     ),
   ];

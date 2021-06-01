@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constants.dart';
+import 'constants.dart';
 
-Widget mainButton(
-    BuildContext context, @required String path, @required String text) {
+Widget mainButton(BuildContext context, String path, String text) {
   return GestureDetector(
     onTap: () {
       Navigator.pushNamed(context, path);
@@ -24,7 +23,7 @@ Widget mainButton(
   );
 }
 
-Widget textButton(@required String text) {
+Widget textButton(String text) {
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
     decoration: BoxDecoration(
@@ -62,7 +61,7 @@ Widget goBackButton(BuildContext context) {
   );
 }
 
-Widget box(@required double h) {
+Widget box(double h) {
   return SizedBox(
     height: h,
   );

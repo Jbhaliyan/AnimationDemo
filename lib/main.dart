@@ -2,11 +2,13 @@ import 'package:animationexample/animationtext/animationtext.dart';
 // import 'package:animationexample/constants.dart';
 import 'package:animationexample/sizeanime/sizeAnime.dart';
 import 'package:animationexample/utilities/widget.dart';
+import 'animate/animation.dart';
 import 'containeranime/animatedcontainer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'fadeanime/animatedopacity.dart';
+import 'heroAnimate/heroAnimate.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
           '/animatedopacity': (context) => FadeAnime(),
           '/animatedtext': (context) => AnimatedText(),
           '/sizeAnime': (context) => SizeAnimation(),
+          '/animateClass': (context) => AnimateClass(),
+          '/heroanimation': (context) => HeroAnimation(),
         });
   }
 }
@@ -51,24 +55,24 @@ class _MyHomePageState extends State<MyHomePage> {
           style: GoogleFonts.getFont('Pacifico'),
         ),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              mainButton(context, '/animatedcontainer', 'Animated Container'),
-              box(15.0),
-              mainButton(context, '/animatedopacity', 'Animated Opacity'),
-              box(15.0),
-              mainButton(context, '/animatedtext', 'Animated Text'),
-              // mainBox(),
-              // mainButton(context, '/heroanimation', 'Hero Animation'),
-              box(15.0),
-              mainButton(context, '/sizeAnime', 'Size Animation')
-            ],
-          ),
+      body:
+          // Center(child: mainButton(context, '/animateClass', 'AnimateClass')
+          Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            mainButton(context, '/animatedcontainer', 'Animated Container'),
+            box(15.0),
+            mainButton(context, '/animatedopacity', 'Animated Opacity'),
+            box(15.0),
+            mainButton(context, '/animatedtext', 'Animated Text'),
+            box(15),
+            mainButton(context, '/heroanimation', 'Hero Animation'),
+            box(15.0),
+            mainButton(context, '/sizeAnime', 'Size Animation')
+          ],
         ),
       ),
     );
