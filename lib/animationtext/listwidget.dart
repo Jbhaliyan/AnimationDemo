@@ -59,6 +59,7 @@ class ListWidget {
     SizedBox(
       width: 250.0,
       child: DefaultTextStyle(
+        textAlign: TextAlign.center,
         style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
         child: AnimatedTextKit(
           //
@@ -72,7 +73,7 @@ class ListWidget {
               duration: Duration(milliseconds: 4000),
             ),
             FadeAnimatedText(
-              'do it RIGHT NOW!!!',
+              'do it anyways!!!',
               duration: Duration(milliseconds: 4000),
             ),
           ],
@@ -89,15 +90,15 @@ class ListWidget {
         ),
         child: AnimatedTextKit(animatedTexts: [
           TyperAnimatedText(
-            "Never backoff with the learning part",
+            "Why do you think it was wrong??",
             speed: Duration(milliseconds: 500),
           ),
           TyperAnimatedText(
-            "you must do it",
+            "because",
             speed: Duration(milliseconds: 500),
           ),
           TyperAnimatedText(
-            'better implementation',
+            'it feels so.',
             speed: Duration(milliseconds: 500),
           ),
           TyperAnimatedText(
@@ -117,18 +118,18 @@ class ListWidget {
               'Discipline is the best tool',
               speed: Duration(milliseconds: 500),
             ),
-            TypewriterAnimatedText(
-              'Design first, then code',
-              speed: Duration(milliseconds: 500),
-            ),
-            TypewriterAnimatedText(
-              'Do not patch bugs out, rewrite them',
-              speed: Duration(milliseconds: 500),
-            ),
-            TypewriterAnimatedText(
-              'Do not test bugs out, design them out',
-              speed: Duration(milliseconds: 500),
-            )
+            // TypewriterAnimatedText(
+            //   'Design first, then code',
+            //   speed: Duration(milliseconds: 500),
+            // ),
+            // TypewriterAnimatedText(
+            //   'Do not patch bugs out, rewrite them',
+            //   speed: Duration(milliseconds: 500),
+            // ),
+            // TypewriterAnimatedText(
+            //   'Do not test bugs out, design them out',
+            //   speed: Duration(milliseconds: 500),
+            // )
           ],
           displayFullTextOnTap: true,
           stopPauseOnTap: true,

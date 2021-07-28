@@ -1,5 +1,4 @@
 import 'package:animationexample/animationtext/animationtext.dart';
-// import 'package:animationexample/constants.dart';
 import 'package:animationexample/sizeanime/sizeAnime.dart';
 import 'package:animationexample/utilities/widget.dart';
 import 'animate/animation.dart';

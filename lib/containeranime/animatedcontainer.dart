@@ -13,14 +13,14 @@ class _ContainerDemoState extends State<ContainerDemo> {
   Color? color;
   var _height = 100.0;
   var _width = 100.0;
-  // double margin;
+  late double margin;
   double? border;
 
   void initstate() {
     super.initState();
     color = Colors.teal;
     border = randomBorderradius();
-    // margin=randomMargin();
+    margin = randomMargin();
   }
 
   void animateContainer() {
